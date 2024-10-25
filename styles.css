@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;500;600&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'IBM Plex Sans', sans-serif;
+    background-color: #FFFFFF;
+    color: #000000;
+    position: relative;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo {
+    width: 250px;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 2.5em;
+    color: #D1006B;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+
+.launch-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px 24px;
+    background-color: #D1006B;
+    color: #FFFFFF;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 1em;
+    font-weight: 500;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.launch-button:hover {
+    background-color: #B20054;
+    transform: translateY(-3px);
+}
+
+.info {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 1.15em;
+    color: #4B5563;
+    font-weight: 300;
+}
+
+.features {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.feature {
+    background-color: #F9F9F9;
+    border: 1px solid #D1D5DB;
+    border-radius: 12px;
+    padding: 18px;
+    width: 30%;
+    box-shadow: 0 10px 20px rgba(140, 17, 79, 0.849);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.feature:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(249, 158, 0, 0.849);
+}
+
+h2 {
+    color: #D1006B;
+    font-size: 1.4em;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.feature p {
+    font-weight: 300;
+    font-size: 1em;
+    color: #333333;
+}
+
+/* Background pattern with a pink gradient */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(209, 0, 107, 0.12) 25%, rgba(255, 182, 193, 0.1) 25%, rgba(255, 182, 193, 0.1) 75%, rgba(209, 0, 107, 0.12) 75%);
+    z-index: 0;
+}
+
+footer {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 0.9em;
+    color: #666;
+}
