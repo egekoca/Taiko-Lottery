@@ -56,12 +56,12 @@ h1 {
     border-radius: 8px;
     font-size: 1em;
     font-weight: 500;
-    transition: background-color 0.3s, transform 0.3s;
+    transition: background-color 0.5s, transform 0.5s;
 }
 
 .launch-button:hover {
     background-color: #B20054;
-    transform: translateY(-3px);
+    transform: translateY(-5px);
 }
 
 .info {
@@ -85,15 +85,16 @@ h1 {
     padding: 18px;
     width: 30%;
     box-shadow: 0 10px 20px rgba(140, 17, 79, 0.849);
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform 0.5s, box-shadow 0.5s;
 }
 
 .feature:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(249, 158, 0, 0.849);
+    box-shadow: 0 10px 20px rgba(249, 158, 0, 0.888);
 }
 
 h2 {
+    /* Security Transparency Earnings*/
     color: #D1006B;
     font-size: 1.4em;
     font-weight: 500;
@@ -103,7 +104,7 @@ h2 {
 .feature p {
     font-weight: 300;
     font-size: 1em;
-    color: #333333;
+    color: #070606;
 }
 
 /* Background pattern with a pink gradient */
