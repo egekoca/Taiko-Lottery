@@ -1,5 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;500;600&display=swap');
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;500;600&family=Poppins:wght@400;500;600&display=swap');
 
+/* Genel ayarlar */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -13,8 +15,100 @@ body {
     position: relative;
 }
 
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(93, 11, 193, 0.886) 25%, rgba(255, 182, 193, 0.1) 25%, rgba(255, 182, 193, 0.1) 75%, rgba(93, 11, 193, 0.886) 75%);
+    z-index: -1;
+}
+
+/* Sabit Üst Menü */
+.fixed-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 70px; /* Yüksekliği biraz artırdık */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 0 20px; /* Sol ve sağdan boşluk */
+    z-index: 1000;
+}
+
+/* Logo ve site ismini dikey olarak ortalamak için iç boşluk ekledik */
+.fixed-header .logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    padding: 5px 0; /* Üst ve alttan eşit boşluk */
+    margin: 5px 5px ;
+}
+
+.fixed-header .logo img {
+    width: 60px;
+    height: auto;
+    margin-right: 5px;
+}
+
+.fixed-header .logo span {
+    font-size: 1.5em;
+    font-weight: 600;
+    color: #7e18cb;
+}
+
+/* Ortadaki menü bağlantıları */
+.fixed-header .menu-links {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    padding: 130px;
+}
+
+.fixed-header .menu-links li a {
+    text-decoration: none;
+    color: #000000;
+    font-weight: 500;
+    transition: color 0.3s;
+    padding: 10px 15px; /* Dikey ve yatay boşluk */
+}
+
+.fixed-header .menu-links li a:hover {
+    color: #7600d1;
+}
+
+/* Sağ üstte Launch App butonu */
+.fixed-header .launch-button {
+    background-color: #7600d1;
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 5px 10px;
+    
+    border-radius: 8px;
+    font-size: 1em;
+    font-weight: 500;
+    transition: background-color 0.5s, transform 0.5s;
+}
+
+.fixed-header .launch-button:hover {
+    background-color: #7600d1;
+    transform: translateY(-2px);
+}
+
+/* Sabit menü boşluğu */
+main {
+    padding-top: 80px;
+}
+
+/* Diğer CSS kuralları... */
+
+/* İçerik konteyneri */
 .container {
-    max-width: 900px;
     margin: 0 auto;
     padding: 20px;
     position: relative;
@@ -26,6 +120,7 @@ header {
     margin-bottom: 30px;
 }
 
+/* Logo düzeni */
 .logo-container {
     display: flex;
     flex-direction: column;
@@ -40,7 +135,7 @@ header {
 h1 {
     font-size: 2.5em;
     color: #D1006B;
-    font-weight: 600;
+    font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 0.8px;
 }
@@ -49,7 +144,7 @@ h1 {
     position: absolute;
     top: 20px;
     right: 20px;
-    padding: 10px 24px;
+    padding: 20px 40px;
     background-color: #D1006B;
     color: #FFFFFF;
     text-decoration: none;
@@ -67,61 +162,102 @@ h1 {
 .info {
     text-align: center;
     margin-bottom: 30px;
-    font-size: 1.15em;
-    color: #4B5563;
-    font-weight: 300;
+    font-size: 1.5em;
+    color: #000000;
+    font-weight: 500;
 }
 
+/* Özellikler bölümü düzeni */
 .features {
     display: flex;
     justify-content: space-between;
+    gap: 20px;
     margin-bottom: 30px;
 }
 
+/* Tekil özellik kutusu */
 .feature {
+    display: flex;
+    align-items: center;
     background-color: #F9F9F9;
     border: 1px solid #D1D5DB;
     border-radius: 12px;
     padding: 18px;
-    width: 30%;
-    box-shadow: 0 10px 20px rgba(140, 17, 79, 0.849);
+    width: 100%;
+    box-shadow: 0 20px 30px rgba(93, 11, 193, 0.886);
     transition: transform 0.5s, box-shadow 0.5s;
+    font-family: 'Poppins', sans-serif;
+    text-align: left;
+    margin-bottom: 20px;
 }
 
+/* Özellik simgesi */
+.feature-icon {
+    width: 70px;
+    height: 70px;
+    margin-right: 15px;
+    flex-shrink: 0;
+}
+
+/* Özellik başlığı ve açıklaması */
+.feature-content h2 {
+    margin: 0;
+    font-size: 1.5em;
+    color: #D1006B;
+    font-weight: 600;
+}
+
+.feature-content p {
+    margin-top: 8px;
+    color: #666666;
+    font-size: 1em;
+}
+
+/* Özellik kutusu hover efekti */
 .feature:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(249, 158, 0, 0.888);
+    box-shadow: 0 10px 20px rgba(178, 4, 184, 0.679);
 }
 
-h2 {
-    /* Security Transparency Earnings*/
-    color: #D1006B;
-    font-size: 1.4em;
-    font-weight: 500;
-    margin-bottom: 8px;
+/* Dönen logo alanı */
+.rotating-logo-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
-.feature p {
-    font-weight: 300;
-    font-size: 1em;
-    color: #070606;
+.rotating-logo {
+    width: 150px;
+    animation: rotateTilted 10s linear infinite;
 }
 
-/* Background pattern with a pink gradient */
-body::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(135deg, rgba(209, 0, 107, 0.12) 25%, rgba(255, 182, 193, 0.1) 25%, rgba(255, 182, 193, 0.1) 75%, rgba(209, 0, 107, 0.12) 75%);
-    z-index: 0;
+@keyframes rotateTilted {
+    0% {
+        transform: rotate3d(1, 1, 0, 0deg);
+    }
+    100% {
+        transform: rotate3d(1, 1, 0, 360deg);
+    }
 }
 
 footer {
     text-align: center;
     margin-top: 30px;
     font-size: 0.9em;
-    color: #666;
+    color: #000000;
+}
+
+.fixed-header .menu-links li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s, background-color 0.3s;
+    padding: 10px 15px;
+}
+
+.fixed-header .menu-links li a:hover {
+    color: #ffffff;
+    background-color: rgba(93, 11, 193, 0.886);
+    border-radius: 8px;
 }
